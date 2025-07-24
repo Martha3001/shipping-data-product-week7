@@ -1,0 +1,20 @@
+# models/staging/sources.yml
+version: 2
+
+sources:
+  - name: raw
+    schema: raw
+    tables:
+      - name: telegram_messages
+        description: "Raw Telegram messages loaded from JSON files"
+        columns:
+          - name: id
+            description: "Primary key"
+          - name: message_data
+            description: "Raw JSON message data"
+          - name: scrape_date
+            description: "Date when the data was scraped"
+          - name: channel_name
+            description: "Name of the Telegram channel"
+          - name: loaded_at
+            description: "Timestamp when data was loaded to the database"
