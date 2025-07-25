@@ -1,0 +1,6 @@
+path: datasets/Medical-pills
+train: data/medical/train
+val: data/medical/val
+
+nc: 1 
+names: ['pill']
