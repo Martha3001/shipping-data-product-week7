@@ -1,0 +1,26 @@
+
+name: 'telegram_data'
+version: '1.0.0'
+
+profile: 'telegram_data'
+
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:         # directories to be removed by `dbt clean`
+  - "target"
+  - "dbt_packages"
+
+models:
+  telegram_data:
+    staging:
+      +materialized: view
+    marts:
+      +schema: core
+
+vars:
+  raw_database: shipping_db
+  raw_schema: raw
