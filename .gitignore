@@ -6,3 +6,4 @@ data/
 *.log
 *.png
 *.jpg
+__pycache__
