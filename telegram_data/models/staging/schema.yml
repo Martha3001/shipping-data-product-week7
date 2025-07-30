@@ -19,3 +19,25 @@ models:
         description: "Number of views the message received"
       - name: has_image
         description: "Boolean indicating if the message contains an image"
+
+  - name: stg_image_detections
+    description: >
+      Staging view for YOLO object detections extracted from Telegram message images.
+      Links detected object classes with corresponding messages via message_id.
+    columns:
+      - name: detection_id
+        description: Unique identifier for each object detection (surrogate key).
+      - name: message_id
+        description: Foreign key referencing the Telegram message containing the image.
+      - name: detected_object_class
+        description: Name of the detected object class (e.g., 'person', 'car').
+      - name: confidence_score
+        description: Confidence score of the detected object (range 0 to 1).
+      - name: image_filename
+        description: Name of the image file that was analyzed.
+      - name: relative_path
+        description: Path to the image relative to the base data directory.
+      - name: processed_at
+        description: Timestamp when YOLO processed the image.
+      - name: loaded_at
+        description: Timestamp when the detection was loaded into the raw layer.

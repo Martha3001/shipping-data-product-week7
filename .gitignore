@@ -4,3 +4,5 @@ data/
 .env
 *.session
 *.log
+*.png
+*.jpg
