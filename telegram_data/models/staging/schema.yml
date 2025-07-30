@@ -32,7 +32,7 @@ models:
       - name: detected_object_class
         description: Name of the detected object class (e.g., 'person', 'car').
       - name: confidence_score
-        description: Confidence score of the detected object (range: 0 to 1).
+        description: Confidence score of the detected object (range 0 to 1).
       - name: image_filename
         description: Name of the image file that was analyzed.
       - name: relative_path

@@ -17,4 +17,4 @@ SELECT
 FROM {{ ref('stg_image_detections') }} AS detections
 -- Optional join if you want to ensure message exists in fct_messages
 INNER JOIN {{ ref('fct_messages') }} AS messages
-  ON detections.message_id = messages.message_id
+  ON CAST(detections.message_id AS integer) = CAST(messages.message_id AS integer)
