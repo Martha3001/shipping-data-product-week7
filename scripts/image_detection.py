@@ -11,6 +11,10 @@ OUTPUT_IMG_DIR = Path("data/raw/detected_images")
 
 # === Load Models ===
 general_model = YOLO("yolov8n.pt")  # General object detection (COCO)
+
+# To train the model with pill dataset
+# general_model.train(data='medical-pills.yaml', epochs=50, imgsz=640)
+
 pill_model = YOLO("runs/detect/train7/weights/best.pt")  # Trained pill detector
 
 def extract_message_id(filename):
